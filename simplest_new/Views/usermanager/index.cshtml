@@ -1,0 +1,23 @@
+﻿@using simplest_new.Models
+@model user
+
+@{
+    ViewBag.Title = "index";
+}
+
+<h2>index</h2>
+<div class="navbar">
+    <div class="h4">this is from viewbag</div class="h4">
+
+    @ViewBag.item.name
+
+    @ViewBag.item.IDnumber
+</div>
+
+<div class="navbar">
+    <div class="h4"> and this one from model</div>
+
+    @Model.name
+    @Model.IDnumber
+
+</div>
