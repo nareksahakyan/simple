@@ -8,8 +8,10 @@ namespace simplest_new.Models
     public class user
     {
         public int userID { get; set; }
-        public string name { get; set; }
-        public int IDnumber { get; set; }
+        public virtual string name { get; set; }
+        public virtual int IDnumber { get; set; }
+
+        public user() { }
 
         public user(string uname, int idnumber)
         {

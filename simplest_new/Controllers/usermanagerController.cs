@@ -14,10 +14,22 @@ namespace simplest_new.Controllers
         public ActionResult Index()
         {
             var usr = new user("Narek", 10001);
+            var usr1 = new user("Barek", 10002);
+            var usr2 = new user("Karek", 10003);
 
-            ViewBag.item = usr;
-            
-            return View(usr);
+            var db = new usermangerContext();
+
+            db.users.Add(usr);
+            db.users.Add(usr1);
+            db.users.Add(usr2);
+            db.SaveChanges();
+
+
+            List<user> user_list = new List<user>() { usr, usr1, usr2 };
+
+            ViewBag.UList = user_list;
+
+            return View();
         }
 	}
 }

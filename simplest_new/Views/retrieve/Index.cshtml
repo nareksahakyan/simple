@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+
+<div>
+    data that has been retrieved from database<br>
+
+    @foreach (var t in ViewBag.UListdb)
+    {
+
+        <span>@t.name  _  @t.IDnumber </span><br>
+    }
+
+</div>
+

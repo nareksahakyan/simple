@@ -1,25 +1,23 @@
-﻿@using simplest_new.Models
-@model user
-
-@{
+﻿@{
     ViewBag.Title = "index";
 }
 
 <h2>index</h2>
-<div class="navbar">
-    <div class="h4">this is from viewbag</div class="h4">
+<div>
+this list is not from db<br>
 
-    @ViewBag.item.name
+    @foreach (var t in ViewBag.UList)
+{
 
-    @ViewBag.item.IDnumber
-</div>
-
-<div class="navbar">
-    <div class="h4"> and this one from model</div>
-
-    @Model.name
-    @Model.IDnumber
+    <span>@t.name  _  @t.IDnumber </span><br>
+}      
 
 </div>
+<br>
+
+@Html.ActionLink("click to see data retrieved from database", "Index", "retrieve" )
+
+<br>
+
 <span> this was added on work computer  </span><br>
 <span> and this one from home computer </span>
