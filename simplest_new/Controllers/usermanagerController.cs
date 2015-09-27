@@ -13,9 +13,9 @@ namespace simplest_new.Controllers
         // GET: /usermanager/
         public ActionResult Index()
         {
-            var usr = new user("Narek", 10001);
-            var usr1 = new user("Barek", 10002);
-            var usr2 = new user("Karek", 10003);
+            var usr = new user("Narek", 10001, new DateTime(2001,5,9));
+            var usr1 = new user("Barek", 10002, new DateTime(1991,6,5));
+            var usr2 = new user("Karek", 10003, new DateTime(1999,5,6));
 
             var db = new usermangerContext();
 
