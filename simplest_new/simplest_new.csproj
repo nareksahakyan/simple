@@ -236,6 +236,7 @@
     <Content Include="Views\Sample\Index.cshtml" />
     <Content Include="Views\Example\Index.cshtml" />
     <Content Include="Views\retrieve\Index.cshtml" />
+    <Content Include="Views\usermanager\addUser.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

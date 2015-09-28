@@ -9,15 +9,14 @@ namespace simplest_new.Controllers
 {
     public class usermanagerController : Controller
     {
+        private usermangerContext db = new usermangerContext();
         //
         // GET: /usermanager/
         public ActionResult Index()
         {
             var usr = new user("Narek", 10001, new DateTime(2001,5,9));
             var usr1 = new user("Barek", 10002, new DateTime(1991,6,5));
-            var usr2 = new user("Karek", 10003, new DateTime(1999,5,6));
-
-            var db = new usermangerContext();
+            var usr2 = new user("Karek", 10003, new DateTime(1999,5,6));          
 
             db.users.Add(usr);
             db.users.Add(usr1);
@@ -31,5 +30,31 @@ namespace simplest_new.Controllers
 
             return View();
         }
+
+        //
+        //  GET:    /usermanager/addUser
+        public ActionResult addUser()
+        {
+            return View();
+        }
+
+        // POST:   /usermanager/addUser
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult addUser([Bind(Include = "name, IDnumber,birthday")] user user)
+        {
+            if (ModelState.IsValid)
+            {
+                db.users.Add(user);
+                db.SaveChanges();
+                return RedirectToAction("index");
+            }
+
+            return View(user);
+        }
+    
+
+
 	}
 }
